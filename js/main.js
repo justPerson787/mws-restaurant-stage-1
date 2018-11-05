@@ -211,3 +211,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+/* Service Worker registration*/
+
+
+
