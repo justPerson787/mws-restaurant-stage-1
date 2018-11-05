@@ -44,6 +44,13 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   background-color: #f3f3f3;
   min-height: 100%;
 }
+
+/*<!--.inside #maincontent {
+display: flex;
+flex-direction: column;
+align-items: center;
+}*/
+
 #footer {
   background-color: #444;
   color: #aaa;
@@ -52,6 +59,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+  width: 100%;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -76,13 +84,14 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+   /* width: calc(50% - 80px);*/
+    width:  100%; 
 }
 
 /* Display list items side by side */
 #breadcrumb li {
     display: inline;
-}
+  }
 
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumb li+li:before {
@@ -104,9 +113,10 @@ nav h1 a {
 }
 /* ====================== Map ====================== */
 #map {
-  height: 80%;
+  height: 40%;
   width: 100%;
   background-color: #ccc;
+  position: absolute;
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
@@ -162,7 +172,7 @@ nav h1 a {
   display: flex;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
+  min-height: 50%;
   min-width: 100%;
 }
 #restaurants-list li h1 {
@@ -201,21 +211,21 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
+  height: 30%;
+  
   right: 0;
   top: 80px;
-  width: 50%;
+  width: 100%;
 }
 .inside #map {
   background-color: #ccc;
-  height: 100%;
+  height: 30%;
   width: 100%;
 }
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -282,4 +292,15 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+@media only screen and (max-width:800px) {
+  /* For mobile phones: */
+  .inside #restaurant-container, .inside #map-container, .inside #reviews-container, #reviews-list li {
+     width: 100%;
+  }
+  .inside #restaurant-img {
+    display: none;  
+   
+  }
 }
