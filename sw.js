@@ -1,12 +1,10 @@
-/* files we want to cashe
-const casheFiles = [  
-];*/
+const casheName = 'v1';
 
 //Add an install event listener to the service worker to cashe offline files
 self.addEventListener('install', function(event) {
     event.waitUntil(
         //create a new cache 'v1'
-      caches.open('v1').then(function(cache) {
+      caches.open(casheName).then(function(cache) {
         return cache.addAll([
             '/',
             '/index.html',
