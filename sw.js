@@ -1,3 +1,5 @@
+// here I used some code provided by https://developers.google.com/web/fundamentals/primers/service-workers/
+
 const casheName = 'v1';
 
 //Add an install event listener to the service worker to cashe offline files
@@ -12,7 +14,7 @@ self.addEventListener('install', function(event) {
             '/css/styles.css',
             '/js/dbhelper.js',
             '/js/main.js',
-            '/js/restaurant-info.js',
+            '/js/restaurant_info.js',
             '/data/restaurants.json',
             '/img/1.jpg',
             '/img/2.jpg',
