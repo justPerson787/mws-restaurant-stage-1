@@ -1,8 +1,8 @@
-// files we want to cashe
+/* files we want to cashe
 const casheFiles = [  
-];
+];*/
 
-//Add an install event listener to the service worker
+//Add an install event listener to the service worker to cashe offline files
 self.addEventListener('install', function(event) {
     event.waitUntil(
         //create a new cache 'v1'
@@ -27,6 +27,15 @@ self.addEventListener('install', function(event) {
             '/img/9.jpg',
             '/img/10.jpg'
         ]);
+      })
+    );
+});
+
+//If resource is not in cashe, it is requested from network
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+      caches.match(event.request).then(function(response) {
+        return response || fetch(event.request);
       })
     );
 });
