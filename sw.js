@@ -3,7 +3,7 @@ const casheName = 'v1';
 //Add an install event listener to the service worker to cashe offline files
 self.addEventListener('install', function(event) {
     event.waitUntil(
-        //create a new cache 'v1'
+        //stores pages to a new cache 'v1'
       caches.open(casheName).then(function(cache) {
         return cache.addAll([
             '/',
