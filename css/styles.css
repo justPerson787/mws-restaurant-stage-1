@@ -113,12 +113,12 @@ nav h1 a {
 }
 /* ====================== Map ====================== */
 #map-container {
-  height: 20%;
+  height: 80vh;
 }
 
 #map {
-  height: 20%;
-  width: 40%;
+  height: 80vh;
+  width: 100%;
   background-color: #ccc;
   position: absolute;
 }
@@ -301,10 +301,6 @@ nav h1 a {
   /* For mobile phones: */
   .inside #restaurant-container, .inside #map-container, .inside #reviews-container, #reviews-list li {
      width: 100%;
-  }
-  .inside #restaurant-img {
-    display: none;  
-   
   }
 }
 

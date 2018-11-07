@@ -8,7 +8,6 @@ self.addEventListener('install', function(event) {
         //stores pages to a new cache 'v1'
       caches.open(cacheName).then(function(cache) {
         return cache.addAll([
-            '/',
             '/index.html',
             '/restaurant.html',
             '/css/styles.css',
@@ -44,9 +43,9 @@ self.addEventListener('fetch', function(event) {
         return fetch(fetchRequest).then(
           function(response) {
             // Check if we received a valid response
-            if(!response || response.status !== 200 || response.type !== 'basic') {
+            /*if(!response || response.status !== 200 || response.type !== 'basic') {
               return response;
-            }
+            }*/
             var responseToCache = response.clone();
             caches.open(cacheName)
               .then(function(cache) {
