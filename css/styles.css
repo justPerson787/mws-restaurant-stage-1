@@ -42,7 +42,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #maincontent {
   background-color: #f3f3f3;
-  min-height: 100%;
+  /*min-height: 100%;*/
 }
 
 /*<!--.inside #maincontent {
@@ -168,8 +168,8 @@ nav h1 a {
   min-height: 380px;
   padding: 0 30px 25px;
   text-align: left;
-  max-width: 470px;
-  width:80%;
+  /*max-width: 470px;*/
+  width:100%;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;

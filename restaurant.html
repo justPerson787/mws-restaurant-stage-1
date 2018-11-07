@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -21,7 +21,7 @@
       <h1><a tabindex="1" href="/">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
+    <ul id="breadcrumb" role = 'link' area-label='menu'>
       <li><a href="/">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
@@ -32,17 +32,17 @@
   <!-- Beginning main -->
   <main id="maincontent">
     <!-- Beginning map -->
-    <section id="map-container">
-      <div id="map"></div>
+    <section id="map-container" role='map area' tabindex="-10">
+      <div id="map" aria-label="location map" role='map image'></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h1 tabindex="2" id="restaurant-name"></h1>
-      <img alt = "restaurant" id="restaurant-img">
-      <p tabindex="2" id="restaurant-cuisine"></p>
-      <p tabindex="3" id="restaurant-address"></p>
-      <table tabindex="4" id="restaurant-hours"></table>
+      <h1 tabindex="0" id="restaurant-name"></h1>
+      <img alt = "restaurant image" id="restaurant-img">
+      <p tabindex="0" id="restaurant-cuisine"></p>
+      <p tabindex="0" id="restaurant-address"></p>
+      <table tabindex="0" id="restaurant-hours"></table>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->

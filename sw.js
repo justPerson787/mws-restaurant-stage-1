@@ -1,12 +1,12 @@
-// here I used some code provided by https://developers.google.com/web/fundamentals/primers/service-workers/
+// here I used code provided at https://developers.google.com/web/fundamentals/primers/service-workers/
 
-const casheName = 'v1';
+const cacheName = 'v1';
 
 //Add an install event listener to the service worker to cashe offline files
 self.addEventListener('install', function(event) {
     event.waitUntil(
         //stores pages to a new cache 'v1'
-      caches.open(casheName).then(function(cache) {
+      caches.open(cacheName).then(function(cache) {
         return cache.addAll([
             '/',
             '/index.html',
@@ -35,7 +35,27 @@ self.addEventListener('install', function(event) {
 self.addEventListener('fetch', function(event) {
     event.respondWith(
       caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
+        if (response) {
+          return response;
+        }
+        // A request can only be consumed once thus we need
+        // to clone the response.
+        var fetchRequest = event.request.clone();
+        return fetch(fetchRequest).then(
+          function(response) {
+            // Check if we received a valid response
+            if(!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+            var responseToCache = response.clone();
+            caches.open(cacheName)
+              .then(function(cache) {
+                cache.put(event.request, responseToCache);
+              });
+
+            return response;
+          }
+        );
       })
     );
 });
