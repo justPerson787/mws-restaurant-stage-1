@@ -227,6 +227,7 @@ nav h1 a {
   /*CHECK height: 30%;*/
   width: 100%;
   height: 80vh;
+  position: absolute;
 }
 .inside #footer {
   bottom: 0;
@@ -322,9 +323,6 @@ nav h1 a {
 
 @media only screen and (min-width: 1001px) {
   .filter-options {
-    width: 100%;
-  }
-  #map {
     width: 100%;
   }
 }
