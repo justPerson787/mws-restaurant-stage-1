@@ -311,9 +311,9 @@ nav h1 a {
 
 @media only screen and (min-width: 1001px) {
   .filter-options {
-    width: 50%;
+    width: 100%;
   }
   #map {
-    width: 50%;
+    width: 100%;
   }
 }
