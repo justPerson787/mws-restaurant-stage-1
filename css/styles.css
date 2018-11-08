@@ -113,7 +113,7 @@ nav h1 a {
 }
 /* ====================== Map ====================== */
 #map-container {
-  height: 80vh;
+   height: 80vh;
 }
 
 #map {
@@ -249,7 +249,8 @@ nav h1 a {
 }
 
 .inside #restaurant-img, .inside #restaurant-cuisine {
-	width: 90%;
+  width: 90%;
+  display: block;
 }
 
 #restaurant-address {
